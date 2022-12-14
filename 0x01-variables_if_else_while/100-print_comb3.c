@@ -5,19 +5,22 @@
  */
 int main(void)
 {
-	int i;
-	int j;
+	int ones = 0;
+	int tens = 0;
 
-	for (i = 10; i <= 19; i++)
+	for (tens = '0'; tens <= '9'; tens++)
 	{
-		for (j = 10; j <= 19; j++)
+		for (ones = '0'; ones <= '9'; ones++)
 		{
-			putchar((i % 10) + '0');
-			putchar((j % 10) + '0');
-			if (i != 19 ||  j != 19)
+			if (!((ones == tens) || (tens > ones)))
 			{
-				putchar(',');
-				putchar(' ');
+				putchar(tens);
+				putchar(ones);
+				if (!(ones == '9' && tens == '8'))
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 	}
